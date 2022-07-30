@@ -18,18 +18,18 @@ const triviaContent = (obj) => {
         dropDown.remove()
         startButton.remove()
         dropDownLabel.remove()
-        quizQuestion.textContent = obj.question
+        quizQuestion.innerHTML = obj.question
         playArea.append(quizQuestion)
         let randomizedAnswers = randomize(obj) // callback function to generate randomized answers
         randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
             const answerButton = document.createElement('button')
-            answerButton.innerText = answer
+            answerButton.innerHTML = answer
             playArea.append(answerButton)
             answerButton.addEventListener('click', () => {
                 if (answer === obj['correct_answer']){
                     score++
                 }
-                
+
 
             })
         })
