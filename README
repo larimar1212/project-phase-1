@@ -1,0 +1,45 @@
+Trivia Project
+
+1. Our website has different trivia quizzes that test the user's general or specific knowledge.
+2. We are using https://opentdb.com/api.php?amount=10
+3. local api for results (data that persists)
+4. We will be using node.js and localhost server
+5. Using one API with a lot of interpolation/ routes 
+
+
+const getData = (amount = 10, ) => {
+fetch(`https://opentdb.com/api.php?amount=${amount}&category=24&difficulty=medium&type=multiple`)
+
+getData(5)
+
+User Stories :
+
+
+
+I need three eventlisteners,
+
+1. click
+2. mouseover
+3. submit 
+4. filter by difficulty 
+5. dark/light mode 
+3. alert for getting answer right or wrong
+4. animation for Game Over . you lost 
+5. input name for the game 
+6. score tracking
+
+
+each eventlistener should have its own callback function
+must use some form of array iteration using methods (map, foreach, filter)
+
+
+As a user, I want to see the quiz on the DOM, 
+I want to 
+
+
+obj
+results array = has different objects with quiz data , withi the object there is an array with incorrect answers
+
+
+make two diff container divs for the questions to be aaligned 
+
