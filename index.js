@@ -42,7 +42,7 @@ const triviaContent = (questionObject) => {
 // 1.
 const getTrivia = () => {
 // change URL to 1 result
-fetch(baseUrl).then(req => req.json())
+fetch(`https://opentdb.com/api.php?amount=1&category=${dropDown.value}&difficulty=medium&type=multiple`).then(req => req.json())
 .then(data => {
     let questionObject = data.results[0] // make a variable for the actual object
     triviaContent(questionObject)    
