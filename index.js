@@ -13,44 +13,65 @@ quizQuestion.style.color = 'white'
 //keeps track of score
 let score = 0
 
-const triviaContent = (obj) => {
-    startButton.addEventListener('click', () => {
-        dropDown.remove()
-        startButton.remove()
-        dropDownLabel.remove()
-        quizQuestion.innerHTML = obj.question
-        playArea.append(quizQuestion)
-        let randomizedAnswers = randomize(obj) // callback function to generate randomized answers
+// 2.
+const triviaContent = (questionObject) => {
+    quizQuestion.innerHTML = questionObject.question
+    playArea.append(quizQuestion)
+
+        // .3
+        let randomizedAnswers = randomize(questionObject) // callback function to generate randomized answers
         randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
             const answerButton = document.createElement('button')
             answerButton.innerHTML = answer
             playArea.append(answerButton)
             answerButton.addEventListener('click', () => {
-                if (answer === obj['correct_answer']){
+                if (answer === questionObject['correct_answer']){
                     score++
                 }
+                console.log(score)
+                playArea.innerHTML = ''
+                getTrivia()
 
 
             })
         })
-    
-    })
-}
+     }
 
+    
+
+// 1.
 const getTrivia = () => {
 // change URL to 1 result
 fetch(baseUrl).then(req => req.json())
 .then(data => {
-    let res = data.results[0] // make a variable for the actual object
-    triviaContent(res)    
-})
-}
-getTrivia()
+    let questionObject = data.results[0] // make a variable for the actual object
+    triviaContent(questionObject)    
+    })
 
-        
-const randomize = (res) => {
-    let allAnswers = [...res.incorrect_answers]
-    allAnswers.splice(Math.floor(Math.random() * (res.incorrect_answers.length + 1)), 0, res.correct_answer)
+}
+   
+// 4.
+const randomize = (questionObject) => {
+    let allAnswers = [...questionObject.incorrect_answers]
+    allAnswers.splice(Math.floor(Math.random() * (questionObject.incorrect_answers.length + 1)), 0, questionObject.correct_answer)
     return allAnswers
 }
 
+
+// funciton when u click start, and when click on answer 
+
+// clicking start and invoking the removal of the elements 
+startButton.addEventListener('click', () => {
+    handleClickStart() 
+
+})
+
+
+// removing these elements from the page after clicking start
+const handleClickStart = () => {
+        dropDown.remove()
+        startButton.remove()
+        dropDownLabel.remove()
+        getTrivia() // invoking original fetch req to render next question
+    
+}
