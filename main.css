@@ -31,8 +31,7 @@ body {
 #big-container {
     text-align: center;
     position: absolute;
-    margin: auto;
-    width: 50%;
+   
 }
 
 #drop-down{
@@ -159,8 +158,6 @@ margin: 0;
     font-size: 9vw;
     line-height: 9vw;
     text-shadow: 0 0 3vw #F40A35;
-    margin: auto;
-    width: -50%;
 }
 
 .flux {
