@@ -14,18 +14,26 @@ body {
     min-height: 100vh;
     color: var(--dark-color);
     background: #000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .wrapper {
     filter: alpha(opacity=60);
     opacity: 0.7;
     padding: 1.5rem 4rem 3rem 4rem;
-    width: 600px;
+    width: 1100px;
     height: 680px;
     border-top-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-    position: relative;
     box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 #big-container {
@@ -359,15 +367,6 @@ src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 @media(max-width: 678px) {
     .quiz-title {
         font-size: 1.6rem;
-    }
-
-    .wrapper {
-        margin: 3rem 0;
-        width: 90%;
-        height: 90%;
-        padding: 1.5rem 1rem 3rem 1rem;
-        border-top-left-radius: 0;
-        border-bottom-right-radius: 0;
     }
 
     .quiz-foot button {
