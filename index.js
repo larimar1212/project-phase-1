@@ -97,8 +97,33 @@ const endGame = (e) => {
         neonQuiz.remove()
         neonTrivia.remove()
         playArea.remove() 
-        finalPage()     
+        inputName()     
     }
+    
+}
+
+let userName;
+const inputName = () => {
+    const form = document.createElement('form')
+    const formLabel = document.createElement('label')
+    const formInput = document.createElement('input')
+    const formButton = document.createElement('button')
+    form.id = 'form'
+    formLabel.id = 'form-label'
+    formInput.id = 'form-input'
+    formButton.id = 'form-button'
+    formLabel.textContent = 'Enter your name'
+    formButton.textContent = 'Submit'
+    header.append(form)
+    form.append(formLabel)
+    form.append(formInput)
+    form.append(formButton)
+    formLabel.style.color = 'white'
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        userName = e.target['form-input'].value
+        form.reset()
+    })
     
 }
 
