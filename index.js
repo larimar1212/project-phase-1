@@ -143,6 +143,10 @@ const finalPage = () => {
     scoreHeader.textContent = `You Scored ${score}/10`
     const scoreReaction = document.createElement('p')
     scoreReaction.id = 'score-reaction'
+    const playAgainForm = document.createElement('form')
+    const playAgainButton = document.createElement('input')
+    playAgainButton.setAttribute('type', 'submit')
+    playAgainButton.setAttribute('value', 'START OVER')
     if (score <= 3) {
         scoreReaction.textContent = 'Get better.'
     } else if (score <= 6) {
@@ -155,6 +159,9 @@ const finalPage = () => {
     header.append(congrats)
     header.append(scoreHeader)
     header.append(scoreReaction)
+    header.append(playAgainForm)
+    playAgainForm.append(playAgainButton)
+    playAgainButton.textContent = 'PLAY AGAIN'
     scoreHeader.style.color = 'white'
     scoreReaction.style.color = 'white'
     congrats.style.color = 'white'
