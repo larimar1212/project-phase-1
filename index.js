@@ -13,6 +13,9 @@ quizQuestion.style.color = 'white'
 //keeps track of score
 let score = 0
 
+//keeps track of questions asked to prevent duplicates and end game
+const questionsAsked = []
+
 // 2.
 const triviaContent = (questionObject) => {
     quizQuestion.innerHTML = questionObject.question
@@ -31,8 +34,8 @@ const triviaContent = (questionObject) => {
                 console.log(score)
                 playArea.innerHTML = ''
                 getTrivia()
-
-
+                questionsAsked.unshift(quizQuestion.innerHTML) //populates the array with the question asked after answer is clicked
+                console.log(questionsAsked)
             })
         })
      }
@@ -58,7 +61,7 @@ const randomize = (questionObject) => {
 }
 
 
-// funciton when u click start, and when click on answer 
+// function when u click start, and when click on answer 
 
 // clicking start and invoking the removal of the elements 
 startButton.addEventListener('click', () => {
