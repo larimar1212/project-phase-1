@@ -13,7 +13,7 @@ const leaderBoardSpace = document.getElementsByClassName('filter')[0]
 //where question will show up
 const quizQuestion = document.createElement('h1')
 quizQuestion.id = 'question'
-quizQuestion.style.color = 'white'
+
 
 
 //keeps track of score
@@ -29,9 +29,12 @@ const triviaContent = (questionObject) => {
 
         // .3
         let randomizedAnswers = randomize(questionObject) // callback function to generate randomized answers
+        let answerDiv = document.createElement('answer-div')
         randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
             const answerButton = document.createElement('button')
+            answerButton.setAttribute('class', 'answer')
             answerButton.innerHTML = answer
+            answerDiv.setAttribute('class', 'answer-div')
             playArea.append(answerButton)
             answerButton.addEventListener('click', () => {
                 if (answer === questionObject['correct_answer']){
@@ -72,7 +75,8 @@ const randomize = (questionObject) => {
 // clicking start and invoking the removal of the elements 
 startButton.addEventListener('click', () => {
     handleClickStart() 
-
+    let triviaContainer = document.querySelector('.wrapper')
+    triviaContainer.classList.add('top-positioned')
 })
 
 
