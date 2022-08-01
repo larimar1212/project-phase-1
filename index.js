@@ -8,7 +8,6 @@ const playArea = document.getElementById('play-area')
 //where question will show up
 const quizQuestion = document.createElement('h1')
 quizQuestion.id = 'question'
-quizQuestion.style.color = 'white'
 
 //keeps track of score
 let score = 0
@@ -20,10 +19,14 @@ const triviaContent = (questionObject) => {
 
     // .3
     let randomizedAnswers = randomize(questionObject) // callback function to generate randomized answers
+    let answerDiv = document.createElement('answer-div')
+    playArea.append(answerDiv)
     randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
         const answerButton = document.createElement('button')
+        answerButton.setAttribute('class', 'answer')
         answerButton.innerHTML = answer
-        playArea.append(answerButton)
+        answerDiv.setAttribute('class', 'answer-div')
+        answerDiv.append(answerButton)
         answerButton.addEventListener('click', () => {
             if (answer === questionObject['correct_answer']) {
                 score++
@@ -63,6 +66,8 @@ const randomize = (questionObject) => {
 // clicking start and invoking the removal of the elements 
 startButton.addEventListener('click', () => {
     handleClickStart()
+    let triviaContainer = document.querySelector('.wrapper')
+    triviaContainer.classList.add('top-positioned')
 
 })
 

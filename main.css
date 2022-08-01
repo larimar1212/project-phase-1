@@ -39,15 +39,11 @@ body {
 #big-container {
     text-align: center;
     position: absolute;
+    align-items: center;
+    justify-content: center;
    
 }
 
-#drop-down{
-    text-align: center;
-    position: relative;
-    top: 190px;
-    font-size: 17px
-}
 
 #label {
     text-align: center;
@@ -101,6 +97,44 @@ margin: 0;
         vertical-align: middle
     }
 
+    #play-area {
+        font-family: neon;
+        color: #c98c30;
+        text-shadow: 0 0 3vw #a7956a;
+        background-color: black;
+        text-align: center;
+        position: relative;
+        top: 190px;
+        border-color: 5px
+        }
+
+    .answer-div {
+        top: 70px;
+        position: relative;
+    }
+
+
+
+    .answer {
+            font-family: neon;
+            color: #c98c30;
+            text-shadow: 0 0 3vw #a7956a;
+            background-color: black;
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            border-color: 5px;
+            width: 50%;
+            margin-top: 20px;
+            top: 20%
+
+    }
+        
+    .top-positioned {
+        position: absolute;
+        top: 0px
+    }
+
     #drop-down {
         font-family: neon;
         color: #FB4264;
@@ -108,6 +142,10 @@ margin: 0;
         line-height: 9vw;
         text-shadow: 0 0 3vw #F40A35;
         background-color: black;
+        text-align: center;
+         position: relative;
+         top: 190px;
+         border-color: 5px
     }
 
     #label {
@@ -217,7 +255,9 @@ margin: 0;
     }
 }
 
+.quiz-head {
 
+}
 
 
 .quiz-score {
@@ -373,4 +413,5 @@ src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
         font-size: 1rem;
     }
 }
+
 
