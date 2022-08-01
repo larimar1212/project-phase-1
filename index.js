@@ -6,6 +6,7 @@ const playArea = document.getElementById('play-area')
 const header = document.getElementsByClassName('container')[0]
 const neonTrivia = document.getElementsByClassName('neon')[0]
 const neonQuiz = document.getElementsByClassName('flux')[0]
+const leaderBoardSpace = document.getElementsByClassName('filter')[0]
 
 //creating nodes for actual quiz
 
@@ -36,14 +37,12 @@ const triviaContent = (questionObject) => {
                 if (answer === questionObject['correct_answer']){
                     score++
                 }
-                console.log(score)
                 playArea.innerHTML = ''
                 getTrivia()
                 questionsAsked.unshift(quizQuestion.innerHTML) //populates the array with the question asked after answer is clicked
-                console.log(questionsAsked)
             })
+    
         })
-        endGame(answerButton)
      }
 
     
@@ -92,7 +91,8 @@ const endGame = (e) => {
     if (questionsAsked.length === 10) {
         e.remove()
         neonQuiz.remove()
-        neonTrivia.remove() 
+        neonTrivia.remove()
+        playArea.remove() 
         finalPage()     
     }
     
@@ -113,7 +113,7 @@ const finalPage = () => {
         scoreReaction.textContent = 'Good job, still not a 10 though.'
     } else {
         scoreReaction.textContent = 'YOOOOO! Perfect score!'
-    }
+    }    
     header.append(scoreHeader)
     header.append(scoreReaction)
     scoreHeader.style.color = 'white'
