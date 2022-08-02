@@ -23,7 +23,7 @@ body {
     opacity: 0.7;
     padding: 1.5rem 4rem 3rem 4rem;
     width: 1100px;
-    height: 680px;
+    height: 100vh;
     border-top-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
     box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
@@ -109,7 +109,7 @@ body {
 }
 
 .answer {
-    font-family: neon;
+    font-family: 'Source Code Pro', monospace;
     color: #C98C30;
     text-shadow: 0 0 3vw #A7956A;
     background-color: black;
@@ -120,6 +120,7 @@ body {
     width: 50%;
     margin-top: 20px;
     top: 20%
+    
 }
 
 .top-positioned {
@@ -210,14 +211,15 @@ body {
     }
 
     #play-area {
-        font-family: neon;
         color: #c98c30;
+        font-family: 'Source Code Pro', monospace;
         text-shadow: 0 0 3vw #a7956a;
         background-color: black;
         text-align: center;
         position: relative;
         top: 190px;
-        border-color: 5px
+        border-color: 5px,
+
         }
 
     .answer-div {
@@ -226,22 +228,6 @@ body {
     }
 
 
-
-    .answer {
-            font-family: neon;
-            color: #c98c30;
-            text-shadow: 0 0 3vw #a7956a;
-            background-color: black;
-            text-align: center;
-            position: relative;
-            font-size: 20px;
-            border-color: 5px;
-            width: 50%;
-            margin-top: 20px;
-            top: 20%
-
-    }
-        
     .top-positioned {
         position: absolute;
         top: 0px
@@ -367,9 +353,6 @@ body {
     }
 }
 
-.quiz-head {
-    
-}
 
 .quiz-score {
     text-align: right;

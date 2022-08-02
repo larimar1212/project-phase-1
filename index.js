@@ -86,6 +86,8 @@ const handleClickStart = () => {
         startButton.remove()
         dropDownLabel.remove()
         getTrivia() // invoking original fetch req to render next question
+        
+
     
 }
 
