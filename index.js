@@ -123,28 +123,46 @@ const inputName = () => {
         e.preventDefault()
         userName = e.target['form-input'].value
         form.reset()
+        form.remove()
+        formButton.remove()
+        formInput.remove()
+        formLabel.remove()
+        finalPage()
     })
     
 }
 
 //creates nodes to display after game end
 const finalPage = () => {
+    
+    const congrats = document.createElement('p')
+    congrats.id = 'congrats'
+    congrats.textContent = `Congrats ${userName}, you scored:` 
     const scoreHeader = document.createElement('h2')
     scoreHeader.id = 'score-head'
     scoreHeader.textContent = `You Scored ${score}/10`
     const scoreReaction = document.createElement('p')
     scoreReaction.id = 'score-reaction'
+    const playAgainForm = document.createElement('form')
+    const playAgainButton = document.createElement('input')
+    playAgainButton.setAttribute('type', 'submit')
+    playAgainButton.setAttribute('value', 'START OVER')
     if (score <= 3) {
         scoreReaction.textContent = 'Get better.'
     } else if (score <= 6) {
-        scoreReaction.textContent = 'Meh, not bad I guess.'
+        scoreReaction.textContent = 'Not bad... I guess.'
     } else if (score <= 9) {
         scoreReaction.textContent = 'Good job, still not a 10 though.'
     } else {
         scoreReaction.textContent = 'YOOOOO! Perfect score!'
     }    
+    header.append(congrats)
     header.append(scoreHeader)
     header.append(scoreReaction)
+    header.append(playAgainForm)
+    playAgainForm.append(playAgainButton)
+    playAgainButton.textContent = 'PLAY AGAIN'
     scoreHeader.style.color = 'white'
     scoreReaction.style.color = 'white'
+    congrats.style.color = 'white'
 }
