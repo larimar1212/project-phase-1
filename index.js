@@ -139,6 +139,7 @@ const finalPage = () => {
     
     const congrats = document.createElement('p')
     congrats.id = 'congrats'
+
     congrats.textContent = `Congrats ${userName},` 
     const scoreHeader = document.createElement('h2')
     scoreHeader.id = 'score-head'
