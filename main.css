@@ -647,10 +647,63 @@ src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
         align-items: center;
         justify-content: center;
         text-align: center;
-        top: 50px;
+        position: absolute;
+    
     }
 
+    #congrats {
+        position: relative;
+        margin-top: 5%;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    #score-head {
+            position: relative;
+            margin-top: 5%;
+            justify-content: center;
+            text-align: center;
     
+        }
+
+    #score-reaction {
+            position: relative;
+            margin-top: 5%;
+            justify-content: center;
+            text-align: center;
+    
+        }
+
+
+    .play-again {
+        border: none;
+            border-radius: 0.5rem;
+            outline: 0;
+            padding: .5rem 1rem;
+            margin: 0 auto 0 auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: block;
+            background-color: #0000005c;
+            color: var(--dark-color);
+            letter-spacing: 2px;
+            transition: var(--transition);
+            font-family: neon;
+            color: #FB4264;
+            font-size: 50px;
+            line-height: 9vw;
+            text-shadow: 0 0 3vw #F40A35;
+            animation: neon 1s ease infinite;
+            -moz-animation: neon 1s ease infinite;
+            -webkit-animation: neon 1s ease infinite;
+            margin-top: 25%
+
+    }
+
+
+    
+
     /*.wrapper {
         background-image: url('200w.webp');
         } */
