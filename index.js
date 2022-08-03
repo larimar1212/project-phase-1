@@ -140,6 +140,10 @@ const finalPage = () => {
     
     const congrats = document.createElement('p')
     congrats.id = 'congrats'
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     congrats.textContent = `Congrats ${userName},` 
     const scoreHeader = document.createElement('h2')
     scoreHeader.id = 'score-head'
@@ -150,11 +154,20 @@ const finalPage = () => {
     const playAgainButton = document.createElement('input')
     playAgainButton.setAttribute('type', 'submit')
     playAgainButton.setAttribute('value', 'START OVER')
+<<<<<<< HEAD
+=======
+    playAgainButton.setAttribute('class', 'play-again')
+>>>>>>> main
     const newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'new-div')
     const body = document.body
     body.classList.remove('flex')
     body.append(newDiv)
+<<<<<<< HEAD
+=======
+    const placeholder = document.createElement('div')
+    newDiv.append(placeholder)
+>>>>>>> main
     newDiv.append(congrats)
     newDiv.append(scoreHeader)
     newDiv.append(scoreReaction)

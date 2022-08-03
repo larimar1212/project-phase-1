@@ -120,6 +120,7 @@ body {
     width: 50%;
     margin-top: 20px;
     top: 20%
+    
 }
 
 .top-positioned {
@@ -190,6 +191,7 @@ body {
 
 .filter {
 
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     width: 100%;
@@ -294,6 +296,112 @@ body {
 }
 
 
+=======
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: table;
+        background-color: black;
+    }
+
+    @font-face {
+        font-family: neon;
+        src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+    }
+
+    #label {
+        display:inline-flex;
+        text-align: center;
+        vertical-align: middle
+    }
+
+    #play-area {
+        color: #c98c30;
+        font-family: 'Source Code Pro', monospace;
+        text-shadow: 0 0 3vw #a7956a;
+        background-color: black;
+        text-align: center;
+        position: relative;
+        top: 190px;
+        border-color: 5px,
+
+        }
+
+    .answer-div {
+        top: 70px;
+        position: relative;
+    }
+
+
+    .top-positioned {
+        position: absolute;
+        top: 0px
+    }
+
+    #drop-down {
+        font-family: neon;
+        color: #FB4264;
+        font-size: 50px;
+        line-height: 9vw;
+        text-shadow: 0 0 3vw #F40A35;
+        background-color: black;
+        text-align: center;
+         position: relative;
+         top: 190px;
+         border-color: 5px
+    }
+
+    #label {
+        font-family: neon;
+        color: #426DFB;
+        font-size: 50px;
+        text-shadow: 0 0 3vw #2356FF;
+    }
+
+    #label {
+        animation: neon 1s ease infinite;
+        -moz-animation: neon 1s ease infinite;
+        -webkit-animation: neon 1s ease infinite;
+    }
+
+    @keyframes neon {
+
+        0%,
+        100% {
+            text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+            color: #FED128;
+        }
+
+        50% {
+            text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+            color: #806914;
+        }
+    }
+
+    .flux {
+        animation: flux 2s linear infinite;
+        -moz-animation: flux 2s linear infinite;
+        -webkit-animation: flux 2s linear infinite;
+        -o-animation: flux 2s linear infinite;
+    }
+
+    @keyframes flux {
+
+        0%,
+        100% {
+            text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+            color: #28D7FE;
+        }
+
+        50% {
+            text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+            color: #146C80;
+        }
+    }
+    
+
+>>>>>>> main
 
 .neon {
     font-family: neon;
@@ -479,8 +587,13 @@ body {
 
 
 @font-face {
+<<<<<<< HEAD
     font-family: neon;
     src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+=======
+font-family: neon;
+src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+>>>>>>> main
 }
 
 .quiz-foot button:hover {
@@ -525,6 +638,7 @@ body {
 }
 
 #form {
+<<<<<<< HEAD
     padding: 0;
     width: 100%;
     height: 100%;
@@ -651,16 +765,211 @@ body {
 
 
 /*.wrapper {
+=======
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+
+    #form-input {
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 10%;
+
+    }
+
+    @font-face {
+        font-family: neon;
+        src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+    }
+
+    #form-label {
+        font-family: neon;
+        color: #FB4264;
+        font-size: 5vw;
+        line-height: 9vw;
+        text-shadow: 0 0 3vw #F40A35;
+    }
+
+    .flux {
+        font-family: neon;
+        color: #426DFB;
+        font-size: 9vw;
+        line-height: 9vw;
+        text-shadow: 0 0 3vw #2356FF;
+    } 
+
+    #form-label {
+        animation: neon 1s ease infinite;
+        -moz-animation: neon 1s ease infinite;
+        -webkit-animation: neon 1s ease infinite;
+    }
+
+    @keyframes form-label {
+
+        0%,
+        100% {
+            text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+            color: #FED128;
+        }
+
+        50% {
+            text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+            color: #806914;
+        }
+    }
+
+    .flux {
+        animation: flux 2s linear infinite;
+        -moz-animation: flux 2s linear infinite;
+        -webkit-animation: flux 2s linear infinite;
+        -o-animation: flux 2s linear infinite;
+    }
+
+     #form-button {
+
+        border: none;
+        border-radius: 0.5rem;
+        outline: 0;
+        padding: .5rem 1rem;
+        margin: 0 auto 0 auto;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: block;
+        background-color: #802f0f;
+        color: var(--dark-color);
+        letter-spacing: 2px;
+        transition: var(--transition);
+        box-shadow: 0 4px 0 0 #BBBBBB;
+        font-family: neon;
+        color: #FB4264;
+        font-size: 50px;
+        line-height: 9vw;
+        text-shadow: 0 0 3vw #F40A35;
+        animation: neon 1s ease infinite;
+        -moz-animation: neon 1s ease infinite;
+        -webkit-animation: neon 1s ease infinite;;
+        margin-top: 45%
+
+        }
+
+
+ #form-button:hover {
+     background-color: #E6E6E6;
+     box-shadow: 0 4px 0 0 #A7A7A7;
+     transform: scale(0.95);
+ }
+
+        
+    @keyframes flux {
+
+        0%,
+        100% {
+            text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+            color: #28D7FE;
+        }
+
+        50% {
+            text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+            color: #146C80;
+        }
+    }
+    
+
+
+    .new-div {
+        width: 100%;
+        height: 100vh; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+    
+    }
+
+    #congrats {
+        position: relative;
+        margin-top: 5%;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    #score-head {
+            position: relative;
+            margin-top: 5%;
+            justify-content: center;
+            text-align: center;
+    
+        }
+
+    #score-reaction {
+            position: relative;
+            margin-top: 5%;
+            justify-content: center;
+            text-align: center;
+    
+        }
+
+
+    .play-again {
+        border: none;
+            border-radius: 0.5rem;
+            outline: 0;
+            padding: .5rem 1rem;
+            margin: 0 auto 0 auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: block;
+            background-color: #0000005c;
+            color: var(--dark-color);
+            letter-spacing: 2px;
+            transition: var(--transition);
+            font-family: neon;
+            color: #FB4264;
+            font-size: 50px;
+            line-height: 9vw;
+            text-shadow: 0 0 3vw #F40A35;
+            animation: neon 1s ease infinite;
+            -moz-animation: neon 1s ease infinite;
+            -webkit-animation: neon 1s ease infinite;
+            margin-top: 25%
+
+    }
+
+    i {
+        color: white;
+        margin-right: 50%;
+        position: relative;
+        top: 5%;
+    }
+
+    
+
+    /*.wrapper {
+>>>>>>> main
         background-image: url('200w.webp');
         } */
 
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> main
 
 
 
 
+<<<<<<< HEAD
 
 /*text-align: center;
+=======
+ /*text-align: center;
+>>>>>>> main
  position: relative;
  top: 300px;
  font-family: neon;
@@ -672,15 +981,28 @@ body {
  -moz-animation: neon 1s ease infinite;
  -webkit-animation: neon 1s ease infinite;
  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
  * {
      padding: 0;
      margin: 0;
      box-sizing: border-box;
  }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> main
  .quiz-foot button:hover {
      background-color: #E6E6E6;
      box-shadow: 0 4px 0 0 #A7A7A7;
  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
  .quiz-foot button:active {
      transform: scale(0.95);
  } */
