@@ -7,6 +7,7 @@ const header = document.getElementsByClassName('container')[0]
 const neonTrivia = document.getElementsByClassName('neon')[0]
 const neonQuiz = document.getElementsByClassName('flux')[0]
 const leaderBoardSpace = document.getElementsByClassName('filter')[0]
+const wholeDamnThing = document.getElementsByClassName('wrapper')[0]
 
 //creating nodes for actual quiz
 
@@ -75,7 +76,6 @@ const randomize = (questionObject) => {
 // clicking start and invoking the removal of the elements 
 startButton.addEventListener('click', () => {
     handleClickStart() 
-    let triviaContainer = document.querySelector('.wrapper')
     triviaContainer.classList.add('top-positioned')
 })
 
@@ -127,7 +127,10 @@ const inputName = () => {
         formButton.remove()
         formInput.remove()
         formLabel.remove()
+       removeAll(document.body)
         finalPage()
+        
+        
     })
     
 }
@@ -137,7 +140,8 @@ const finalPage = () => {
     
     const congrats = document.createElement('p')
     congrats.id = 'congrats'
-    congrats.textContent = `Congrats ${userName}, you scored:` 
+
+    congrats.textContent = `Congrats ${userName},` 
     const scoreHeader = document.createElement('h2')
     scoreHeader.id = 'score-head'
     scoreHeader.textContent = `You Scored ${score}/10`
@@ -147,22 +151,41 @@ const finalPage = () => {
     const playAgainButton = document.createElement('input')
     playAgainButton.setAttribute('type', 'submit')
     playAgainButton.setAttribute('value', 'START OVER')
-    if (score <= 3) {
-        scoreReaction.textContent = 'Get better.'
-    } else if (score <= 6) {
-        scoreReaction.textContent = 'Not bad... I guess.'
-    } else if (score <= 9) {
-        scoreReaction.textContent = 'Good job, still not a 10 though.'
-    } else {
-        scoreReaction.textContent = 'YOOOOO! Perfect score!'
-    }    
-    header.append(congrats)
-    header.append(scoreHeader)
-    header.append(scoreReaction)
-    header.append(playAgainForm)
+    playAgainButton.setAttribute('class', 'play-again')
+    const newDiv = document.createElement('div')
+    newDiv.setAttribute('class', 'new-div')
+    const body = document.body
+    body.classList.remove('flex')
+    body.append(newDiv)
+    const placeholder = document.createElement('div')
+    newDiv.append(placeholder)
+    newDiv.append(congrats)
+    newDiv.append(scoreHeader)
+    newDiv.append(scoreReaction)
+    newDiv.append(playAgainForm)
     playAgainForm.append(playAgainButton)
     playAgainButton.textContent = 'PLAY AGAIN'
     scoreHeader.style.color = 'white'
     scoreReaction.style.color = 'white'
     congrats.style.color = 'white'
+    newDiv.style.backgroundImage = 'url(https://media2.giphy.com/media/5jT0jaNDsM6Ik7X9yq/giphy.gif?cid=ecf05e4758ctghzohpifan9zwwfok116rygmhzyuj2znhhkj&rid=giphy.gif&ct=g)'
+    if (score === 0) {
+        scoreReaction.textContent = 'Did you even try?'
+    } else if (score <= 3) {
+        scoreReaction.textContent = 'Get better.'
+    } else if (score <= 6) {
+        scoreReaction.textContent = 'Meh.'
+    } else if (score <= 8) {
+        scoreReaction.textContent = 'Decent.'
+    } else if (score === 9) {
+        scoreReaction.textContent = 'Great job, still not a 10 though.'
+    } else {
+        scoreReaction.textContent = 'YOOOOO! Perfect score!'
+    }    
+}
+
+const removeAll = (parent) => {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild)
+    }
 }
