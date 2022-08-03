@@ -653,26 +653,45 @@ src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 
     #congrats {
         position: relative;
-        margin-top: 5%;
-        justify-content: center;
-        text-align: center;
-
-    }
-
-    #score-head {
-            position: relative;
             margin-top: 5%;
             justify-content: center;
             text-align: center;
+            font-family: neon;
+            color: #FB4264;
+            font-size: 30px;
+            text-shadow: 0 0 3vw #F40A35;
+            animation: neon 1s ease infinite;
+            -moz-animation: neon 1s ease infinite;
+            -webkit-animation: neon 1s ease infinite;
+        }
+
+    #score-head {
+            position: relative;
+                margin-top: 5%;
+                justify-content: center;
+                text-align: center;
+                color: #426DFB;
+                font-family: neon;
+                font-size: 35px;
+                text-shadow: 0 0 3vw #1041FF;
+                animation: flux 1s ease infinite;
+                -moz-animation: flux 1s ease infinite;
+                -webkit-animation: flux 1s ease infinite;
     
         }
 
     #score-reaction {
             position: relative;
-            margin-top: 5%;
-            justify-content: center;
-            text-align: center;
-    
+                margin-top: 5%;
+                justify-content: center;
+                text-align: center;
+                font-family: neon;
+                color: #FB4264;
+                font-size: 30px;
+                text-shadow: 0 0 3vw #F40A35;
+                animation: neon 1s ease infinite;
+                -moz-animation: neon 1s ease infinite;
+                -webkit-animation: neon 1s ease infinite;
         }
 
 
@@ -703,9 +722,19 @@ src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 
     i {
         color: white;
-        margin-right: 50%;
-        position: relative;
-        top: 5%;
+            margin-right: 50%;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+    }
+
+    #lenny {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
 
     

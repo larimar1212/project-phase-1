@@ -8,6 +8,7 @@ const neonTrivia = document.getElementsByClassName('neon')[0]
 const neonQuiz = document.getElementsByClassName('flux')[0]
 const leaderBoardSpace = document.getElementsByClassName('filter')[0]
 const wholeDamnThing = document.getElementsByClassName('wrapper')[0]
+const easterEgg = document.getElementById('egg')
 
 //creating nodes for actual quiz
 
@@ -27,42 +28,42 @@ const questionsAsked = []
 const triviaContent = (questionObject) => {
     quizQuestion.innerHTML = questionObject.question
     playArea.append(quizQuestion)
-
-        // .3
-        let randomizedAnswers = randomize(questionObject) // callback function to generate randomized answers
-        let answerDiv = document.createElement('answer-div')
-        randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
-            const answerButton = document.createElement('button')
-            answerButton.setAttribute('class', 'answer')
-            answerButton.innerHTML = answer
-            answerDiv.setAttribute('class', 'answer-div')
-            playArea.append(answerButton)
-            answerButton.addEventListener('click', () => {
-                if (answer === questionObject['correct_answer']){
-                    score++
-                }
-                playArea.innerHTML = ''
-                getTrivia()
-                questionsAsked.unshift(quizQuestion.innerHTML) //populates the array with the question asked after answer is clicked
-            })
     
+    // .3
+    let randomizedAnswers = randomize(questionObject) // callback function to generate randomized answers
+    let answerDiv = document.createElement('answer-div')
+    randomizedAnswers.forEach((answer) => { // iterate over random answer array and append to
+        const answerButton = document.createElement('button')
+        answerButton.setAttribute('class', 'answer')
+        answerButton.innerHTML = answer
+        answerDiv.setAttribute('class', 'answer-div')
+        playArea.append(answerButton)
+        answerButton.addEventListener('click', () => {
+            if (answer === questionObject['correct_answer']){
+                score++
+            }
+            playArea.innerHTML = ''
+            getTrivia()
+            questionsAsked.unshift(quizQuestion.innerHTML) //populates the array with the question asked after answer is clicked
         })
-     }
+        
+    })
+}
 
-    
+
 
 // 1.
 const getTrivia = () => {
-// change URL to 1 result
-fetch(`https://opentdb.com/api.php?amount=1&category=${dropDown.value}&difficulty=medium&type=multiple`).then(req => req.json())
-.then(data => {
-    let questionObject = data.results[0] // make a variable for the actual object
-    triviaContent(questionObject) 
-    endGame(quizQuestion)   
+    // change URL to 1 result
+    fetch(`https://opentdb.com/api.php?amount=1&category=${dropDown.value}&difficulty=medium&type=multiple`).then(req => req.json())
+    .then(data => {
+        let questionObject = data.results[0] // make a variable for the actual object
+        triviaContent(questionObject) 
+        endGame(quizQuestion)   
     })
-
+    
 }
-   
+
 // 4.
 const randomize = (questionObject) => {
     let allAnswers = [...questionObject.incorrect_answers]
@@ -76,16 +77,15 @@ const randomize = (questionObject) => {
 // clicking start and invoking the removal of the elements 
 startButton.addEventListener('click', () => {
     handleClickStart() 
-    triviaContainer.classList.add('top-positioned')
 })
 
 
 // removing these elements from the page after clicking start
 const handleClickStart = () => {
-        dropDown.remove()
-        startButton.remove()
-        dropDownLabel.remove()
-        getTrivia() // invoking original fetch req to render next question
+    dropDown.remove()
+    startButton.remove()
+    dropDownLabel.remove()
+    getTrivia() // invoking original fetch req to render next question
     
 }
 
@@ -118,7 +118,6 @@ const inputName = () => {
     form.append(formLabel)
     form.append(formInput)
     form.append(formButton)
-    formLabel.style.color = 'white'
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         userName = e.target['form-input'].value
@@ -127,7 +126,7 @@ const inputName = () => {
         formButton.remove()
         formInput.remove()
         formLabel.remove()
-       removeAll(document.body)
+        removeAll(document.body)
         finalPage()
         
         
@@ -164,9 +163,6 @@ const finalPage = () => {
     newDiv.append(playAgainForm)
     playAgainForm.append(playAgainButton)
     playAgainButton.textContent = 'PLAY AGAIN'
-    scoreHeader.style.color = 'white'
-    scoreReaction.style.color = 'white'
-    congrats.style.color = 'white'
     newDiv.style.backgroundImage = 'url(https://media2.giphy.com/media/5jT0jaNDsM6Ik7X9yq/giphy.gif?cid=ecf05e4758ctghzohpifan9zwwfok116rygmhzyuj2znhhkj&rid=giphy.gif&ct=g)'
     if (score === 0) {
         scoreReaction.textContent = 'Did you even try?'
@@ -188,3 +184,39 @@ const removeAll = (parent) => {
         parent.removeChild(parent.firstChild)
     }
 }
+
+
+// 3rd event listener "double-click"
+// 
+
+
+easterEgg.addEventListener('dblclick', (e) => {
+    lenny.style.display = 'block' // referencing the css 
+    
+})
+
+/* we event listenet on the easter egg, double click
+crete image tag for the lenny pic, 
+append 
+
+
+
+create modal , make div, 
+put image in div ,  in event listener
+make a e.target, thing for the closing of the modal*/
+
+
+
+
+
+// let modalPopup = () => {
+//     let modalDiv = document.getElementById('myModal')
+//     let modal = document.getElementById('modal-content')
+//     let span = document.getElementByClasName('close')[0]
+// }
+
+
+ window.addEventListener('click', (e) => {
+    lenny.style.display = "none";
+
+ })
