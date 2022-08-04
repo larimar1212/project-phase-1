@@ -1,45 +1,19 @@
 Trivia Project
 
+
 1. Our website has different trivia quizzes that test the user's general or specific knowledge.
-2. We are using https://opentdb.com/api.php?amount=10
-3. local api for results (data that persists)
-4. We will be using node.js and localhost server
-5. Using one API with a lot of interpolation/ routes 
-
-
-const getData = (amount = 10, ) => {
-fetch(`https://opentdb.com/api.php?amount=${amount}&category=24&difficulty=medium&type=multiple`)
-
-getData(5)
-
-User Stories :
-
-
-
-I need three eventlisteners,
-
+2. We are using API: https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple
+3. Using one API with a lot of interpolation/ routes
+4. Using .forEach as a method
+Our three eventlisteners,
 1. click
-2. mouseover
-3. submit 
-4. filter by difficulty 
-5. dark/light mode 
-3. alert for getting answer right or wrong
-4. animation for Game Over . you lost 
-5. input name for the game 
-6. score tracking
-
-
-each eventlistener should have its own callback function
-must use some form of array iteration using methods (map, foreach, filter)
-
-
-As a user, I want to see the quiz on the DOM, 
-I want to 
-
-
-obj
-results array = has different objects with quiz data , withi the object there is an array with incorrect answers
-
-
-make two diff container divs for the questions to be aaligned 
-
+2. dblclick
+3. submit
+User Stories :
+The user can click to start and end the game, and to move on to the next question.
+The user can dblclick to show the user a funny image once an icon is clicked twice.
+The user can click on the dropdown menu and the question content is filtered based on the option selected.
+The user can submit to let the user input their name in a form.
+Once the form is submitted, the user will see a page with confetti and the string "Congratulations" , username, and a string based on whatever score they received.
+Stretch goal:
+Finding out how to prevent duplicates in our questions.
